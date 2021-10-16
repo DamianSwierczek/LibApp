@@ -35,6 +35,12 @@ namespace LibApp_Gr3.Controllers
             }
 
             return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
+
+        }
+
+        public IActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
         }
     }
 }
