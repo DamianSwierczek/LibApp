@@ -17,5 +17,24 @@ namespace LibApp_Gr3.Controllers
 
                 return View(firstBook);
             }
+
+        public IActionResult Edit(int bookId)
+        {
+            return Content("id=" + bookId);
+        }
+
+        public IActionResult Index(int? pageIndex, string sortBy)
+        {
+            if(!pageIndex.HasValue)
+            { 
+                pageIndex = 1;
+            }
+            if (String.IsNullOrEmpty(sortBy))
+            {
+                sortBy = "Name";
+            }
+
+            return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
+        }
     }
 }
