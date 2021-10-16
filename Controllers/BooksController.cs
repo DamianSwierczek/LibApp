@@ -37,7 +37,7 @@ namespace LibApp_Gr3.Controllers
             return Content($"pageIndex={pageIndex}&sortBy={sortBy}");
 
         }
-
+        [Route("books/released/{year:regex(^\\d{{4}}$)}/{month:range(1,12)}")]
         public IActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
